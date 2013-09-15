@@ -1,6 +1,6 @@
 {
   "name": "srvc",
-  "version": "0.0.7",
+  "version": "0.0.1",
   "description": "Micro-services framework",
   "main": "index.js",
   "scripts": {
