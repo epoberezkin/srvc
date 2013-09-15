@@ -34,8 +34,6 @@ var developmentConfig = {
 
 var configModulePath = '../lib/config';
 
-console.log(configModulePath);
-
 describe('config module', function() {
     var mainFile;
 
