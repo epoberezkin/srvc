@@ -1,7 +1,7 @@
 var assert = require('assert')
     Logger = require('../lib/logger');
 
-describe('Logger', function() {
+describe('Logger module', function() {
     var options = {
         level: 3,
         logPrefix: 'srvc(' + process.pid + ')',
@@ -14,7 +14,7 @@ describe('Logger', function() {
         });
     });
 
-    it('should define methods error, warn, info, debug that print to console.log with prefix and method name', function() {
+    it('should define instance and class methods error, warn, info, debug that print to console.log with prefix and method name', function() {
         var methods = ['error', 'warn', 'info', 'debug'];
         var expectedPrefix, expectedType, expectedMessage;
         var systemLog = console.log;
@@ -30,15 +30,20 @@ describe('Logger', function() {
             }
         };
 
-        expectedPrefix = options.logPrefix;
         expectedMessage = 'logger test';
 
         var logger = new Logger(options);
 
         methods.forEach(function(method) {
             expectedType = method;
+
+            expectedPrefix = options.logPrefix;
             assert(logger[method]);
             logger[method]('logger test');
+
+            expectedPrefix = '';
+            assert(Logger[method]);
+            Logger[method]('logger test');
         });
 
         console.log = systemLog;
