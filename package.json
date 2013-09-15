@@ -28,6 +28,10 @@
   "license": "BSD",
   "readmeFilename": "README.md",
   "dependencies": {
-    "nconf": "0.6.7"
+    "nconf": "0.6.7",
+    "underscore": "~1.5.2"
+  },
+  "devDependencies": {
+    "mocha": "1.12.1"
   }
 }
