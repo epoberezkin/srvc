@@ -36,16 +36,27 @@ describe('Logger module', function() {
 
         methods.forEach(function(method) {
             expectedType = method;
-
             expectedPrefix = options.logPrefix;
+
             assert(logger[method]);
             logger[method]('logger test');
 
-            expectedPrefix = '';
             assert(Logger[method]);
             Logger[method]('logger test');
         });
 
         console.log = systemLog;
+    });
+
+    it('should save and use the last logger that was instantiated if class methods are used', function() {
+        var logger = new Logger(options);
+        assert.equal(Logger.__logger, logger);
+
+        logger.info = function(message) {
+            assert.equal(message, 'test logger');
+        };
+
+        Logger.info('test logger');
+        delete Logger.__logger;
     });
 });
