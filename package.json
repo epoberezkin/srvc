@@ -1,0 +1,33 @@
+{
+  "name": "srvc",
+  "version": "0.0.0",
+  "description": "Micro-services framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epoberezkin/srvc.git"
+  },
+  "keywords": [
+    "micro",
+    "service",
+    "anarchy",
+    "cluster",
+    "session",
+    "redis",
+    "configuration",
+    "dependency",
+    "socket.io",
+    "connect",
+    "express",
+    "monitoring"
+  ],
+  "author": "Evgeny Poberezkin",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "nconf": "0.6.7"
+  }
+}
